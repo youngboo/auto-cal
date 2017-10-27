@@ -1,0 +1,37 @@
+<!--The content below is only a placeholder and can be replaced.-->
+{{diagnostic}}
+<form class="ui form" #CheckData="ngForm">
+  <div class="field">
+    <label for="height">高</label>
+    <input id="height" required [(ngModel)]="CheckData.height" name="height"  type="text" [value]="checkData.height">
+  </div>{{checkData.height}}
+  <div class="field">
+    <label  for="height">宽</label>
+    <input id="weight" required [(ngModel)]="CheckData.weight" name="weight" type="text" placeholder="宽" #spy>
+  <br>TODO: remove this: {{spy.className}}
+  </div>
+  <div class="field">
+    <label for="kai">几开</label>
+    <input id="kai" required [(ngModel)]="CheckData.kai"  name="kai" type="text" placeholder="几开">
+  </div>
+  <div class="field">
+    <label for="kind">版型</label>
+    <select id="kind" class="ui fluid dropdown" required>
+      <option *ngFor="let kind of kinds" [value]="kind.id">{{kind.name}}</option>
+    </select>
+  </div>
+</form>
+
+<div class="segment">
+  <div class="ui button basic grey" (click)="onSelect()">确认</div>
+</div>
+<table>
+  <th>版型</th>
+  <th>数量</th>
+  <th>长度</th>
+  <tr>
+    <td>边封</td>
+    <td>{{chicun?chicun.bianfeng:0}}</td>
+    <td>1.4</td>
+  </tr>
+</table>

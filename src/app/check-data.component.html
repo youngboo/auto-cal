@@ -1,0 +1,48 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<form [hidden]="submitted" class="ui form" (ngSubmit)="onSubmit(checkData.height,checkData.width,checkData.kai,checkData.kind)" #checkData="ngForm">
+  <div class="field">
+    <label for="height">高</label>
+    <input id="height" required [(ngModel)]="checkData.height" name="height"  type="text" value="{{checkData.height}}" #height="ngModel" value="{{checkData.height}}">
+    <div [hidden]="height.valid || height.pristine"
+         class="alert alert-danger">
+      Name is required
+    </div>
+  </div>
+  <div class="field">
+    <label  for="width">宽</label>
+    <input id="width" required [(ngModel)]="checkData.width" name="width" type="text" placeholder="宽" #width="ngModel">
+  </div>
+  <div class="field">
+    <label for="kai">几开</label>
+    <input id="kai" required [(ngModel)]="checkData.kai"  name="kai" type="text" placeholder="几开" #kai="ngModel">
+  </div>
+  <div class="field">
+    <label for="kind">版型</label>
+    <select id="kind" class="ui fluid dropdown" [(ngModel)]="checkData.kind"   name="kind" required #kind="ngModel">
+      <option *ngFor="let kind of kinds" [value]="kind.id">{{kind.name}}</option>
+    </select>
+  </div>
+  <div class="field">
+    <button type="submit" class="btn btn-success" [disabled]="!checkData.form.valid">Submit</button>
+  </div>
+</form>
+<div class="ui segment" *ngIf="data">
+  <table class="ui celled striped table">
+    <thead>
+    <tr><th colspan="3">
+      下料单 长：{{checkData.height}} 宽：{{checkData.width}} {{checkData.kai}}开 料型：{{kinds[checkData.kind].name}}
+    </th>
+    </tr></thead>
+    <tbody>
+    <tr>
+      <td class="collapsing">
+        竖料
+      </td>
+      <td>{{data && data.shuliao}}cm</td>
+      <td class="right aligned collapsing">1个</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
