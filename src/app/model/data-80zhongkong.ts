@@ -2,14 +2,14 @@ import {BasicData} from "./basic-data";
 import {MaterialsModel} from "./materials-model";
 
 /**
- * 75中空门
+ * 80中空门
  */
-export class Data75zhongkong extends BasicData{
+export class Data80zhongkong extends BasicData{
 
 
   constructor(height,width,kai) {
     super();
-    //边锋宽度
+    //边封宽度
     this.bianfeng = new MaterialsModel("边封");
     this.bianfeng.width = 45;
     //长度，宽度
@@ -32,15 +32,15 @@ export class Data75zhongkong extends BasicData{
     this.shangxiafang.unit = "套";
     this.shuliao.height = height - 35;
     this.bianfeng.height = height;
-    this.guidao.height = width-this.bianfeng.width;
+    this.guidao.height = (width-this.bianfeng.width)*kai;
     this.boli.height = height - 150 + 25;
     if(kai == 1){
       this.shangxiafang.height = width;
     }else if(kai == 2){
-      this.shangxiafang.height = ((width - this.bianfeng.width)+75)/kai;
+      this.shangxiafang.height = (width - this.bianfeng.width)+75/kai;
     }else if(kai == 3 || kai == 4){
       console.log("开数:" + kai);
-      this.shangxiafang.height = ((width - this.bianfeng.width)+150)/kai;
+      this.shangxiafang.height = (width - this.bianfeng.width)+150/kai;
     }else{
       throw new Error("无法支持的开数");
     }
