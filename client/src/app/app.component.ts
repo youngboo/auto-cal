@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CheckData} from "./check-data";
+import {CheckData} from "./model/check-data";
 
 @Component({
   selector: 'app-root',

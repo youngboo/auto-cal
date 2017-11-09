@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import {CheckDataComponent} from "./check-data.component";
+import {CheckDataComponent} from "./check-form/check-data.component";
 
 @NgModule({
   declarations: [

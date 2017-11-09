@@ -2,10 +2,10 @@
 <div class="ui container align center">
 
 
-<form [hidden]="data" class="ui form" (ngSubmit)="onSubmit(checkData.height,checkData.width,checkData.kai,checkData.kind)" #checkData="ngForm">
+<form [hidden]="data" class="ui form" (ngSubmit)="onSubmit(checkData.height,checkData.width,checkData.kai,checkData.kind,checkData.color)" #checkData="ngForm">
   <div class="fields">
     <div class="field">
-      <label for="height">高</label>
+      <label for="height">高(mm)</label>
       <input id="height" required [(ngModel)]="checkData.height" name="height"  type="text" #height="ngModel" placeholder="高">
       <div [hidden]="height.valid || height.pristine"
            class="alert alert-danger">
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="field">
-      <label  for="width">宽</label>
+      <label  for="width">宽(mm)</label>
       <input id="width" required [(ngModel)]="checkData.width" name="width" type="text" placeholder="宽" #width="ngModel">
     </div>
     <div class="field">
@@ -28,11 +28,17 @@
         <option *ngFor="let kind of kinds" [value]="kind.id">{{kind.name}}</option>
       </select>
     </div>
+    <div class="field">
+      <label for="color">颜色</label>
+      <select id="color" class="ui fluid dropdown" [(ngModel)]="checkData.color" name="color" #color="ngModel" required placeholder="颜色">
+        <option *ngFor="let color of colorArray" [value]="color.id">{{color.name}}</option>
+      </select>
+    </div>
   </div>
   <div class="fields">
     <div class="field">
       <label  for="name">客户名</label>
-      <input id="name" required [(ngModel)]="checkData.name" name="name" type="text" placeholder="客户名" #name="ngModel">
+      <input id="name" required [(ngModel)]="checkData.client" name="client" type="text" placeholder="客户名" #client="ngModel">
     </div>
   </div>
   <div class="field">
@@ -45,13 +51,12 @@
       <tr>
         <th colspan="3">
           下料单&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="text" [(ngModel)]="data.height">
-          长：{{data.height}}mm&nbsp;&nbsp; 宽：{{data.width}}mm&nbsp;&nbsp; {{checkData.kai}}开&nbsp;&nbsp; 料型：{{kinds[checkData.kind].name}}
+          长：{{data.height}}mm&nbsp;&nbsp;&nbsp;&nbsp; 宽：{{data.width}}mm&nbsp;&nbsp;&nbsp;&nbsp; {{checkData.kai}}开&nbsp;&nbsp;&nbsp;&nbsp; 料型：{{kinds[checkData.kind].name}}({{colorArray[checkData.color].name}})
         </th>
       </tr>
       <tr>
         <th colspan="3">
-          客户:王某&nbsp;&nbsp;&nbsp;下单时间：13点41分
+          客户:{{checkData.client}}
         </th>
       </tr>
     </thead>

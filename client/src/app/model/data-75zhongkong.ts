@@ -6,8 +6,8 @@ import {MaterialsModel} from "./materials-model";
  */
 export class Data75zhongkong extends BasicData{
 
-  constructor(height,width,kai) {
-    super(height,width,kai);
+  constructor(height,width,kai,colorId) {
+    super(height,width,kai,colorId);
 
     try {
       height = <number>height;

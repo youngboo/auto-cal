@@ -1,4 +1,5 @@
 import {MaterialsModel} from "./materials-model";
+import {ColorArray} from "../../db/color-array";
 
 export class BasicData {
   public width : number;
@@ -10,12 +11,14 @@ export class BasicData {
   public boli : MaterialsModel;
   public shangxiafang : MaterialsModel;
   public banzi : MaterialsModel;
-  //普通属性的集合，便于展示，除了玻璃和板子都可以放到这里
+  public colorId : number;
+  //普通属性的集合，便于展示
   public materialsArray : MaterialsModel[];
-  constructor(height,width,kai) {
+  constructor(height,width,kai,colorId) {
     this.height = height;
     this.width = width;
     this.kai = kai;
+    this.colorId = colorId;
   }
 
 }
