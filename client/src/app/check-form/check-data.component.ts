@@ -35,5 +35,9 @@ export class CheckDataComponent implements OnInit {
     //console.log("data："+height+","+width+","+kai+","+kind);
     console.log("data："+JSON.stringify(this.data));
   }
+  getDate():string{
+    let now:Date = new Date();
+    return now.getFullYear()+"/"+now.getMonth()+"/"+now.getDay();
+}
 }
 
