@@ -5,7 +5,7 @@ import {CheckData} from "./model/check-data";
   selector: 'app-root',
   template: `
        <h1>{{title}}</h1>
-   <nav class="ui list">
+   <nav class="ui list noprint">
      <a routerLink="/dashboard">导航页</a>
      <a routerLink="/check">下料单</a>
      <a routerLink="/flower">门花</a>

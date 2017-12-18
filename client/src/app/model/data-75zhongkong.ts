@@ -45,7 +45,7 @@ export class Data75zhongkong extends BasicData{
     }
     //玻璃
     this.boli = new MaterialsModel("玻璃");
-    this.boli.height = height - 150 + 25;
+    this.boli.height = this.shuliao.height - 150 + 25;
     this.boli.width = this.shangxiafang.height -150 + 25;
     this.boli.num = kai * 2;
 

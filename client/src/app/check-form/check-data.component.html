@@ -50,35 +50,23 @@
   <table class="ui celled striped table">
     <thead>
       <tr>
-        <th colspan="5">
+        <th colspan="4">
           基本信息：{{data.height}}mm*{{data.width}}mm----{{checkData.kai}}开----{{kinds[checkData.kind].name}}({{colorArray[checkData.color].name}})
         </th>
       </tr>
       <tr>
-        <th>
+        <th class="four wide">
           客户:{{checkData.client}}
         </th>
-        <th class="right aligned collapsing">{{getDate()}}</th>
-        <th class="right aligned collapsing" colspan="3">
+        <th class="right aligned collapsing four wide">{{getDate()}}</th>
+        <th class="right aligned collapsing eight wide" colspan="2">
           <div class="ui input">
             <textarea placeholder="备注"></textarea>
           </div>
         </th>
       </tr>
-      <tr>
-        <th>料种</th>
-        <th>料名</th>
-        <th>尺寸</th>
-        <th class="right aligned collapsing">数量</th>
-        <th>已准备</th>
-      </tr>
     </thead>
     <tbody>
-    <tr>
-      <td rowspan="6">
-        主料
-      </td>
-    </tr>
 <!--    <tr *ngFor="let model of data.materialsArray">
 
       <td class="collapsing">
@@ -98,91 +86,146 @@
   <td class="right aligned collapsing">{{model.num}}{{model.unit}}</td>
 </tr>-->
     <tr>
-      <td class="collapsing">
-        轨道
-      </td>
-      <td>{{data.guidao.height}}mm</td>
-      <td class="right aligned collapsing">{{data.guidao.num}}个</td>
-      <td>
-        <input type="checkbox">
-      </td>
+      <td colspan="2">
+        <table class="ui four column celled table">
+          <thead>
+            <tr>
+              <th>料名</th>
+              <th>尺寸</th>
+              <th class="right aligned collapsing">数量</th>
+              <th>已准备</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td class="collapsing">
+                轨道
+              </td>
+              <td>{{data.guidao.height}}mm</td>
+              <td class="right aligned collapsing">{{data.guidao.num}}个</td>
+              <td>
+                <input type="checkbox">
+              </td>
 
-    </tr>
-    <tr>
-      <td class="collapsing">
-        竖料
+            </tr>
+            <tr>
+              <td class="collapsing">
+                竖料
+              </td>
+              <td>{{data.shuliao.height}}mm</td>
+              <td class="right aligned collapsing">{{data.shuliao.num}}个</td>
+              <td class="right aligned collapsing">
+                <input type="checkbox">
+              </td>
+            </tr>
+            <tr>
+              <td class="collapsing">
+                上下方
+              </td>
+              <td>{{data.shangxiafang.height}}mm</td>
+              <td class="right aligned collapsing">{{data.shangxiafang.num}}{{data.shangxiafang.unit}}</td>
+              <td class="right aligned collapsing">
+                <input type="checkbox">
+              </td>
+            </tr>
+            <tr>
+              <td class="collapsing">
+                边封
+              </td>
+              <td>{{data.bianfeng.height}}mm</td>
+              <td class="right aligned collapsing">{{data.bianfeng.num}}个</td>
+              <td class="right aligned collapsing">
+                <input type="checkbox">
+              </td>
+            </tr>
+            <tr *ngIf="data.boli">
+              <td class="collapsing">
+                玻璃
+              </td>
+              <td>{{data.boli.height}}mm*{{data.boli.width}}mm</td>
+              <td class="right aligned collapsing">{{data.boli.num}}片</td>
+              <td class="right aligned collapsing">
+                <input type="checkbox">
+              </td>
+            </tr>
+            <tr *ngIf="data.banzi">
+              <td class="collapsing">
+                板子
+              </td>
+              <td>{{data.banzi.height}}mm*{{data.banzi.width}}mm</td>
+              <td class="right aligned collapsing">{{data.banzi.num}}张</td>
+              <td class="right aligned collapsing">
+                <input type="checkbox">
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
-      <td>{{data.shuliao.height}}mm</td>
-      <td class="right aligned collapsing">{{data.shuliao.num}}个</td>
-      <td class="right aligned collapsing">
-        <input type="checkbox">
+      <td colspan="2">
+        <table class="ui four column celled table">
+          <thead>
+            <tr>
+              <th>料名</th>
+              <th>尺寸</th>
+              <th class="right aligned collapsing">数量</th>
+              <th>已准备</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="collapsing">
+                堵头
+              </td>
+              <td>16A(15mm*18mm)</td>
+              <td class="right aligned collapsing">-(根据花型确定数量)</td>
+              <td class="right aligned collapsing">
+                <input type="checkbox">
+              </td>
+            </tr>
+            <tr>
+              <td class="collapsing">
+                铝条
+              </td>
+              <td>1800*700(16A)</td>
+              <td class="right aligned collapsing">2套</td>
+              <td class="right aligned collapsing">
+                <input type="checkbox">
+              </td>
+            </tr>
+            <tr>
+              <td class="collapsing">
+                铝条
+              </td>
+              <td>1800*700(16A)</td>
+              <td class="right aligned collapsing">2套</td>
+              <td class="right aligned collapsing">
+                <input type="checkbox">
+              </td>
+            </tr>
+            <tr>
+              <td class="collapsing">
+                铝条
+              </td>
+              <td>1800*700(16A)</td>
+              <td class="right aligned collapsing">2套</td>
+              <td class="right aligned collapsing">
+                <input type="checkbox">
+              </td>
+            </tr>
+            <tr>
+              <td class="collapsing">
+                铝条
+              </td>
+              <td>1800*700(16A)</td>
+              <td class="right aligned collapsing">2套</td>
+              <td class="right aligned collapsing">
+                <input type="checkbox">
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
-    </tr>
-    <tr>
-      <td class="collapsing">
-        上下方
-      </td>
-      <td>{{data.shangxiafang.height}}mm</td>
-      <td class="right aligned collapsing">{{data.shangxiafang.num}}{{data.shangxiafang.unit}}</td>
-      <td class="right aligned collapsing">
-        <input type="checkbox">
-      </td>
-    </tr>
-    <tr>
-      <td class="collapsing">
-        边封
-      </td>
-      <td>{{data.bianfeng.height}}mm</td>
-      <td class="right aligned collapsing">{{data.bianfeng.num}}个</td>
-      <td class="right aligned collapsing">
-        <input type="checkbox">
-      </td>
-    </tr>
-    <tr *ngIf="data.boli">
-      <td class="collapsing">
-        玻璃
-      </td>
-      <td>{{data.boli.height}}mm*{{data.boli.width}}mm</td>
-      <td class="right aligned collapsing">{{data.boli.num}}片</td>
-      <td class="right aligned collapsing">
-        <input type="checkbox">
-      </td>
-    </tr>
-    <tr *ngIf="data.banzi">
-      <td class="collapsing">
-        板子
-      </td>
-      <td>{{data.banzi.height}}mm*{{data.banzi.width}}mm</td>
-      <td class="right aligned collapsing">{{data.banzi.num}}张</td>
-      <td class="right aligned collapsing">
-        <input type="checkbox">
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="6">
-        辅料
-      </td>
-    </tr>
-    <tr>
-      <td class="collapsing">
-        堵头
-      </td>
-      <td>16A(15mm*18mm)</td>
-      <td class="right aligned collapsing">-(根据花型确定数量)</td>
-      <td class="right aligned collapsing">
-        <input type="checkbox">
-      </td>
-    </tr>
-    <tr>
-      <td class="collapsing">
-        铝条
-      </td>
-      <td>1800*700(16A)</td>
-      <td class="right aligned collapsing">-(根据花型确定数量)</td>
-      <td class="right aligned collapsing">
-        <input type="checkbox">
-      </td>
-    </tr>
+  </tr>
     </tbody>
   </table>
 </div>

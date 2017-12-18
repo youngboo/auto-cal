@@ -37,7 +37,7 @@ export class Data80zhongkong extends BasicData{
     if(kai == 1){
       this.shangxiafang.height = width;
     }else if(kai == 2){
-      this.shangxiafang.height = ((width - this.bianfeng.width)+80)/kai;
+      this.shangxiafang.height = Math.floor(((width - this.bianfeng.width)+80)/kai);
     }else if(kai == 3 || kai == 4){
       console.log("开数:" + kai);
       this.shangxiafang.height = ((width - this.bianfeng.width)+160)/kai;
@@ -46,7 +46,7 @@ export class Data80zhongkong extends BasicData{
     }
     //玻璃
     this.boli = new MaterialsModel("玻璃");
-    this.boli.height = height - 160 + 25;
+    this.boli.height = this.shuliao.height - 160 + 25;
     this.boli.width = this.shangxiafang.height -160 + 25;
     this.boli.num = kai * 2;
 
